@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpendWise Dashboard</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZGhtPSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9va2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTE4IDEwYTIgMiAwIDAgMC0yLTJIMTRhMiAyIDAgMCAwLTIgMnYxMiIvPjxwYXRoIGQ9Ik04IDE0YTIgMiAwIDAgMC0yLTJIMTRhMiAyIDAgMCAwLTIgMnY2Ii8+PHBhdGggZD0iTTIgMTZhMiAyIDAgMCAwLTItMkgxNGMyIDAgMCAwLTIgMnY0Ii8+PC9zdmc+" alt="SpendWise Logo">
+                <div>
+                    <div class="font-semibold">SpendWise</div>
+                    <div class="text-xs text-blue-200">Smart Money, Bright Future</div>
+                </div>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li class="nav-item active" data-page="dashboard"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Dashboard</li>
+                    <li class="nav-item" data-page="expenses"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Expenses</li>
+                    <li class="nav-item" data-page="budget"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Budget</li>
+                    <li class="nav-item" data-page="wisebot"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 13-1-1 4-4 1 1-4 4Z"/><path d="m21.4 12.6-5.4-5.4c-2-2-5.1-2-7.1 0l-5.4 5.4c-2 2-2 5.1 0 7.1l5.4 5.4c2 2 5.1 2 7.1 0l5.4-5.4c2-2 2-5.1 0-7.1Z"/><path d="M9 17v-1.3l-5-5L15 1l6 6-5 5H9Z"/></svg>WiseBot</li>
+                    <li class="nav-item" data-page="rewards"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2a2 2 0 0 0-2 2v5l-3 3 3 3v5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-5l3-3-3-3V4a2 2 0 0 0-2-2h-2z"/></svg>Rewards</li>
+                    <li class="nav-item" data-page="learning"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>Learning</li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <!-- ===== DASHBOARD PAGE CONTENT (No changes) ===== -->
+            <div id="dashboard-page-content" class="page-content active">
+                <header class="dashboard-header">
+                    <div>
+                        <h1 class="welcome-text">Welcome back, User! 👋</h1>
+                        <p class="date-text" id="dashboard-date">Tuesday, October 21, 2025</p>
+                    </div>
+                    <button class="add-transaction-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+                        Add Transaction
+                    </button>
+                </header>
+                <section class="metrics-grid">
+                    <div class="metric-card balance"><div class="metric-header"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h6"/><path d="M14 10l3-3 5 5-3 3"/><path d="M17 17v4h4"/></svg>Current Balance</div><div class="metric-value" id="balance-value">$0.00</div><div class="metric-info">Available to spend</div></div>
+                    <div class="metric-card income"><div class="metric-header"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V4M17 9L12 4L7 9"/></svg>Monthly Income</div><div class="metric-value" id="income-value">$0.00</div><div class="metric-info">Money coming in this month</div></div>
+                    <div class="metric-card expenses"><div class="metric-header"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M17 15L12 20L7 15"/></svg>Monthly Expenses</div><div class="metric-value" id="expenses-value">$0.00</div><div class="metric-info">Money spent this month</div></div>
+                    <div class="metric-card streak"><div class="metric-header"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 10c0 1.933-2.686 3.5-6 3.5S2 11.933 2 10s2.686-3.5 6-3.5 6 1.567 6 3.5Z"/><path d="M22 10c0 1.933-2.686 3.5-6 3.5S10 11.933 10 10s2.686-3.5 6-3.5 6 1.567 6 3.5Z"/><path d="M8 7v6M16 7v6"/></svg>Current Streak</div><div class="metric-value">0 days</div><div class="metric-info">Keep saving to maintain your streak!</div></div>
+                </section>
+                <section class="dashboard-sections">
+                    <div class="card-large"><h2 class="card-title">Spending by Category</h2><div class="chart-container"><canvas id="category-chart"></canvas></div><div class="empty-state-chart active" id="empty-state-chart">No expenses yet. Start tracking to see your spending breakdown!</div></div>
+                    <div class="right-column"><div class="card-small"><h2 class="card-title"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>Savings Goal</h2><div class="savings-details"><span>Monthly Target</span><span id="monthly-target">$0</span></div><p class="savings-info">You're saving 0% of your income</p><div class="pro-tip"><span class="pro-tip-title"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 13-1-1 4-4 1 1-4 4Z"/><path d="m21.4 12.6-5.4-5.4c-2-2-5.1-2-7.1 0l-5.4 5.4c-2 2-2 5.1 0 7.1l5.4 5.4c2 2 5.1 2 7.1 0l5.4-5.4c2-2 2-5.1 0-7.1Z"/><path d="M9 17v-1.3l-5-5L15 1l6 6-5 5H9Z"/></svg>Pro Tip</span><p>Try to save at least 20% of your income each month!</p></div></div><div class="card-small"><h2 class="card-title"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2a2 2 0 0 0-2 2v5l-3 3 3 3v5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-5l3-3-3-3V4a2 2 0 0 0-2-2h-2z"/></svg>Level 1</h2><p class="level-title">Financial Explorer</p><div class="progress-bar-container"><div class="progress-bar" style="width: 15%;"></div></div><p class="xp-info">15/100 XP to Level 2</p></div></div>
+                </section>
+                <section class="card-full-width"><h2 class="card-title">Recent Transactions</h2><div class="empty-state active" id="recent-empty-state">No transactions yet. Add your first one to get started!</div><ul class="transaction-list" id="recent-transaction-list"></ul></section>
+            </div>
+
+            <!-- ===== EXPENSES PAGE CONTENT (No changes) ===== -->
+            <div id="expenses-page-content" class="page-content">
+                <header class="dashboard-header">
+                    <div><h1 class="welcome-text">Transactions</h1><p class="date-text">Track your income and expenses</p></div>
+                    <button class="add-transaction-btn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>Add Transaction</button>
+                </header>
+                <section class="transaction-metrics">
+                    <div class="transaction-card income"><div class="transaction-header"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V4M17 9l-5-5-5 5"/></svg>Total Income</div><div class="transaction-value" id="total-income">$0.00</div><div class="transaction-info">All time earnings</div></div>
+                    <div class="transaction-card expense"><div class="transaction-header"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16m5-5-5 5-5-5"/></svg>Total Expenses</div><div class="transaction-value" id="total-expenses">$0.00</div><div class="transaction-info">All time spending</div></div>
+                </section>
+                <section class="card-full-width">
+                    <div class="history-header"><h2 class="card-title">Transaction History</h2><div class="filters"><select class="filter-select"><option>All Types</option><option>Income</option><option>Expense</option></select><select class="filter-select"><option>All Categories</option><option>Food</option><option>Transport</option><option>Salary</option><option>Entertainment</option><option>Shopping</option><option>Education</option><option>Health</option><option>Other</option></select></div></div>
+                    <div class="transaction-list-container"><div class="empty-state active" id="empty-state">No transactions yet. Add your first one to get started!</div><ul class="transaction-list" id="transaction-list"></ul></div>
+                </section>
+            </div>
+            
+            <!-- ===== BUDGET PAGE CONTENT (No changes) ===== -->
+            <div id="budget-page-content" class="page-content">
+                <header class="dashboard-header">
+                    <div>
+                        <h1 class="welcome-text">Budget Manager</h1>
+                        <p class="date-text" id="budget-month">Set spending limits for October 2025</p>
+                    </div>
+                    <button class="add-transaction-btn" id="set-budget-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+                        Set Budget
+                    </button>
+                </header>
+                <section class="transaction-metrics">
+                    <div class="budget-metric-card budget"><div class="transaction-header"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h6"/><path d="M14 10l3-3 5 5-3 3"/><path d="M17 17v4h4"/></svg>Total Budget</div><div class="transaction-value" id="total-budget">$0.00</div><div class="transaction-info">Monthly spending limit</div></div>
+                    <div class="budget-metric-card spent"><div class="transaction-header"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Total Spent</div><div class="transaction-value" id="total-spent-budget">$0.00</div><div class="transaction-info">of your set budgets</div></div>
+                </section>
+                <div class="budget-category-grid">
+                    <div class="budget-category-card" data-category="Food"><h3 class="budget-category-title">Food</h3><div class="budget-card-body"><p class="budget-status-text">No budget set</p><p class="budget-spent-text" data-spent="0">$0.00 spent</p></div><div class="budget-progress-bar-container"><div class="budget-progress-bar"></div></div></div>
+                    <div class="budget-category-card" data-category="Transport"><h3 class="budget-category-title">Transport</h3><div class="budget-card-body"><p class="budget-status-text">No budget set</p><p class="budget-spent-text" data-spent="0">$0.00 spent</p></div><div class="budget-progress-bar-container"><div class="budget-progress-bar"></div></div></div>
+                    <div class="budget-category-card" data-category="Entertainment"><h3 class="budget-category-title">Entertainment</h3><div class="budget-card-body"><p class="budget-status-text">No budget set</p><p class="budget-spent-text" data-spent="0">$0.00 spent</p></div><div class="budget-progress-bar-container"><div class="budget-progress-bar"></div></div></div>
+                    <div class="budget-category-card" data-category="Shopping"><h3 class="budget-category-title">Shopping</h3><div class="budget-card-body"><p class="budget-status-text">No budget set</p><p class="budget-spent-text" data-spent="0">$0.00 spent</p></div><div class="budget-progress-bar-container"><div class="budget-progress-bar"></div></div></div>
+                    <div class="budget-category-card" data-category="Education"><h3 class="budget-category-title">Education</h3><div class="budget-card-body"><p class="budget-status-text">No budget set</p><p class="budget-spent-text" data-spent="0">$0.00 spent</p></div><div class="budget-progress-bar-container"><div class="budget-progress-bar"></div></div></div>
+                    <div class="budget-category-card" data-category="Health"><h3 class="budget-category-title">Health</h3><div class="budget-card-body"><p class="budget-status-text">No budget set</p><p class="budget-spent-text" data-spent="0">$0.00 spent</p></div><div class="budget-progress-bar-container"><div class="budget-progress-bar"></div></div></div>
+                    <div class="budget-category-card" data-category="Other"><h3 class="budget-category-title">Other</h3><div class="budget-card-body"><p class="budget-status-text">No budget set</p><p class="budget-spent-text" data-spent="0">$0.00 spent</p></div><div class="budget-progress-bar-container"><div class="budget-progress-bar"></div></div></div>
+                </div>
+            </div>
+            
+            <!-- ===== WISEBOT PAGE CONTENT (UPDATED) ===== -->
+           <div id="wisebot-page-content" class="page-content">
+            <header class="wisebot-header">
+                <div class="wisebot-icon-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 13-1-1 4-4 1 1-4 4Z"/><path d="m21.4 12.6-5.4-5.4c-2-2-5.1-2-7.1 0l-5.4 5.4c-2 2-2 5.1 0 7.1l5.4 5.4c2 2 5.1 2 7.1 0l5.4-5.4c2-2 2-5.1 0-7.1Z"/><path d="M9 17v-1.3l-5-5L15 1l6 6-5 5H9Z"/></svg>
+                </div>
+                <h1>WiseBot AI Coach</h1>
+                <p>Your personal financial advisor, powered by AI</p>
+            </header>
+            <section class="chat-container">
+                <h2 class="card-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    Chat with WiseBot
+                </h2>
+                
+                <div class="suggestion-chips" id="suggestion-chips">
+                    <button class="suggestion-chip" data-prompt="What's the 50/30/20 budget rule?">What's the 50/30/20 budget rule?</button>
+                    <button class="suggestion-chip" data-prompt="How can I save more money?">How can I save more money?</button>
+                    <button class="suggestion-chip" data-prompt="Explain 'compounding interest'.">Explain 'compounding interest'.</button>
+                    <button class="suggestion-chip" data-prompt="Give me a savings tip for students.">Give me a savings tip for students.</button>
+                </div>
+                <div class="chat-box" id="chat-box">
+                    </div>
+                <form class="chat-input-form" id="chat-input-form">
+                    <input type="text" id="chat-input" placeholder="Ask WiseBot something..." autocomplete="off">
+                    <button type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    </button>
+                </form>
+            </section>
+        </div>
+            
+            <!-- ===== DUMMY PAGES FOR OTHER NAV ITEMS ===== -->
+          <div id="rewards-page-content" class="page-content">
+            <header class="dashboard-header">
+                <div>
+                    <h1 class="welcome-text">Rewards & Achievements</h1>
+                    <p class="date-text">Track your progress and unlock badges</p>
+                </div>
+            </header>
+
+            <section class="rewards-metrics-grid">
+                <div class="reward-metric-card level">
+                    <div class="reward-metric-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                    </div>
+                    <div class="reward-metric-value">Level 1</div>
+                    <div class="reward-metric-info">Financial Explorer</div>
+                    <div class="progress-bar-container"><div class="progress-bar" style="width: 0%;"></div></div>
+                    <div class="xp-info">0/100 XP to Level 2</div>
+                </div>
+                <div class="reward-metric-card streak">
+                    <div class="reward-metric-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4.5A5 5 0 0 0 9 9.5c0 2.21 1.79 4 4 4s4-1.79 4-4c0-.73-.2-1.41-.54-2.04"/><path d="M17.5 10.5c0 2.21-1.79 4-4 4s-4-1.79-4-4c0-.73.2-1.41.54-2.04"/><path d="M10.46 14.5c0 2.21-1.79 4-4 4s-4-1.79-4-4c0-.73.2-1.41.54-2.04"/><path d="M14 17.5c0 2.21-1.79 4-4 4s-4-1.79-4-4c0-.73.2-1.41.54-2.04"/></svg>
+                    </div>
+                    <div class="reward-metric-value">0 Days</div>
+                    <div class="reward-metric-info">Current Streak</div>
+                </div>
+                <div class="reward-metric-card xp">
+                    <div class="reward-metric-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V22m-4-1v-6.5a4 4 0 1 1 8 0V21M12 8h0m0 0a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/></svg>
+                    </div>
+                    <div class="reward-metric-value">0</div>
+                    <div class="reward-metric-info">Total XP Earned</div>
+                </div>
+            </section>
+
+            <section class="card-full-width">
+                <h2 class="card-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2a2 2 0 0 0-2 2v5l-3 3 3 3v5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-5l3-3-3-3V4a2 2 0 0 0-2-2h-2z"/></svg>
+                    Achievement Badges
+                </h2>
+                <div class="badge-grid">
+                    <div class="badge-card unlocked">
+                        <div class="badge-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <h3 class="badge-title">First Steps</h3>
+                        <p class="badge-desc">Added your first transaction</p>
+                    </div>
+                    <div class="badge-card unlocked">
+                        <div class="badge-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4.5A5 5 0 0 0 9 9.5c0 2.21 1.79 4 4 4s4-1.79 4-4c0-.73-.2-1.41-.54-2.04"/><path d="M17.5 10.5c0 2.21-1.79 4-4 4s-4-1.79-4-4c0-.73.2-1.41.54-2.04"/><path d="M10.46 14.5c0 2.21-1.79 4-4 4s-4-1.79-4-4c0-.73.2-1.41.54-2.04"/><path d="M14 17.5c0 2.21-1.79 4-4 4s-4-1.79-4-4c0-.73.2-1.41.54-2.04"/></svg>
+                        </div>
+                        <h3 class="badge-title">Streak Master</h3>
+                        <p class="badge-desc">Maintained a 7-day streak</p>
+                    </div>
+                    <div class="badge-card unlocked">
+                        <div class="badge-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                        </div>
+                        <h3 class="badge-title">Budget Pro</h3>
+                        <p class="badge-desc">Set your first budget</p>
+                    </div>
+                    <div class="badge-card unlocked">
+                        <div class="badge-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                        </div>
+                        <h3 class="badge-title">Learning Champion</h3>
+                        <p class="badge-desc">Completed your first lesson</p>
+                    </div>
+                    <div class="badge-card unlocked">
+                        <div class="badge-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="20" y2="4"/><path d="M16 20h-4a4 4 0 0 1 0-8h4a4 4 0 0 0 0-8h-4"/></svg>
+                        </div>
+                        <h3 class="badge-title">Savings Star</h3>
+                        <p class="badge-desc">Saved 20% of your income</p>
+                    </div>
+                    <div class="badge-card unlocked">
+                        <div class="badge-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V22m-4-1v-6.5a4 4 0 1 1 8 0V21M12 8h0m0 0a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/></svg>
+                        </div>
+                        <h3 class="badge-title">Financial Guru</h3>
+                        <p class="badge-desc">Reached Level 10</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+            <div id="learning-page-content" class="page-content">
+            <header class="dashboard-header">
+                <div>
+                    <h1 class="welcome-text">Learning Hub</h1>
+                    <p class="date-text">Master financial skills through bite-sized lessons</p>
+                </div>
+            </header>
+
+            <section class="learning-metrics-grid">
+                <div class="learning-metric-card lessons">
+                    <div class="learning-metric-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+                    </div>
+                    <div class="learning-metric-value">0/5</div>
+                    <p class="learning-metric-info">Lessons Completed</p>
+                </div>
+                <div class="learning-metric-card completion">
+                    <div class="learning-metric-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                    </div>
+                    <div class="learning-metric-value">0%</div>
+                    <p class="learning-metric-info">Completion Rate</p>
+                </div>
+                <div class="learning-metric-card xp">
+                    <div class="learning-metric-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <div class="learning-metric-value">0</div>
+                    <p class="learning-metric-info">XP from Learning</p>
+                </div>
+            </section>
+
+           <div id="learning-page-content" class="page-content active"> <header class="dashboard-header">
+                <div>
+                    <h1 class="welcome-text">Learning Hub</h1>
+                    <p class="date-text">Master financial skills through bite-sized lessons</p>
+                </div>
+            </header>
+
+            <section class="learning-metrics-grid">
+                </section>
+
+            <section class="lesson-category-section">
+                <h2 class="lesson-category-title">💰 Saving</h2>
+                <div class="lesson-card">
+                    <div class="lesson-details">
+                        <h3 class="lesson-title">The Power of Compound Interest</h3>
+                        <span class="lesson-level beginner">BEGINNER</span>
+                        <p class="lesson-desc">Compound interest is when you earn interest on both your initial savings and the interest you've already earned. For example...</p>
+                    </div>
+                    <div class="lesson-footer">
+                        <span class="lesson-xp"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> +50 XP</span>
+                        <button class="lesson-start-btn" data-lesson="compound-interest">Start Lesson</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="lesson-category-section">
+                <h2 class="lesson-category-title">📊 Budgeting</h2>
+                <div class="lesson-card">
+                    <div class="lesson-details">
+                        <h3 class="lesson-title">Creating Your First Budget</h3>
+                        <span class="lesson-level beginner">BEGINNER</span>
+                        <p class="lesson-desc">A budget is simply a plan for your money. Start by listing all your income sources (allowance, part-time job, gifts). Th...</p>
+                    </div>
+                    <div class="lesson-footer">
+                        <span class="lesson-xp"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> +50 XP</span>
+                        <button class="lesson-start-btn" data-lesson="first-budget">Start Lesson</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="lesson-category-section">
+                <h2 class="lesson-category-title">💳 Debt</h2>
+                <div class="lesson-card">
+                    <div class="lesson-details">
+                        <h3 class="lesson-title">Understanding Credit Cards</h3>
+                        <span class="lesson-level intermediate">INTERMEDIATE</span>
+                        <p class="lesson-desc">Credit cards can be useful tools, but they can also lead to debt if not used responsibly. When you use a credit card, yo...</p>
+                    </div>
+                    <div class="lesson-footer">
+                        <span class="lesson-xp"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> +75 XP</span>
+                        <button class="lesson-start-btn" data-lesson="credit-cards">Start Lesson</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="lesson-category-section">
+                <h2 class="lesson-category-title">🛒 Smart Spending</h2>
+                <div class="lesson-card">
+                    <div class="lesson-details">
+                        <h3 class="lesson-title">Smart Shopping Strategies</h3>
+                        <span class="lesson-level beginner">BEGINNER</span>
+                        <p class="lesson-desc">Before making a purchase, ask yourself: Do I need this or just want it? If it's a want, wait 24-48 hours before buying t...</p>
+                    </div>
+                    <div class="lesson-footer">
+                        <span class="lesson-xp"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> +50 XP</span>
+                        <button class="lesson-start-btn" data-lesson="smart-shopping">Start Lesson</button>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="lesson-category-section">
+                <h2 class="lesson-category-title">📈 Investing</h2>
+                <div class="lesson-card">
+                    <div class="lesson-details">
+                        <h3 class="lesson-title">Introduction to Investing</h3>
+                        <span class="lesson-level intermediate">INTERMEDIATE</span>
+                        <p class="lesson-desc">Investing means putting your money into something with the expectation it will grow in value over time. Common investmen...</p>
+                    </div>
+                    <div class="lesson-footer">
+                        <span class="lesson-xp"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> +75 XP</span>
+                        <button class="lesson-start-btn" data-lesson="intro-investing">Start Lesson</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+
+
+        </main>
+    </div>
+
+    <!-- ===== SHARED MODALS (No changes) ===== -->
+    <div class="modal-overlay" id="transaction-modal">
+        <div class="modal-content"><h2 class="modal-title">Add New Transaction</h2><form id="transaction-form"><div class="form-group"><label for="description">Description</label><input type="text" id="description" placeholder="e.g., Coffee, Paycheck" required></div><div class="form-group"><label for="amount">Amount</label><input type="number" id="amount" placeholder="0.00" step="0.01" required></div><div class="form-group"><label>Type</label><div class="radio-group"><label><input type="radio" name="type" value="income" checked> Income</label><label><input type="radio" name="type" value="expense"> Expense</label></div></div><div class="form-group"><label for="category">Category</label><select id="category" required><option value="Salary">Salary</option><option value="Food">Food</option><option value="Transport">Transport</option><option value="Entertainment">Entertainment</option><option value="Shopping">Shopping</option><option value="Education">Education</option><option value="Health">Health</option><option value="Other">Other</option></select></div><div class="modal-actions"><button type="button" class="btn-cancel" id="cancel-btn">Cancel</button><button type="submit" class="btn-save">Save Transaction</button></div></form></div>
+    </div>
+    <div class="modal-overlay" id="set-budget-modal">
+        <div class="modal-content"><h2 class="modal-title">Set Category Budget</h2><form id="budget-form"><div class="form-group"><label for="budget-category">Category</label><select id="budget-category" required><option value="Food">Food</option><option value="Transport">Transport</option><option value="Entertainment">Entertainment</option><option value="Shopping">Shopping</option><option value="Education">Education</option><option value="Health">Health</option><option value="Other">Other</option></select></div><div class="form-group"><label for="budget-amount">Budget Amount</label><input type="number" id="budget-amount" placeholder="0.00" step="0.01" required></div><div class="modal-actions"><button type="button" class="btn-cancel" id="cancel-budget-btn">Cancel</button><button type="submit" class="btn-save">Set Budget</button></div></form></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
