@@ -25,7 +25,7 @@ This project is 100% frontend and runs right in your browser.
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-username/spendwise-project.git](https://github.com/your-username/spendwise-project.git)
+    git clone [https://github.com/Intelli2Byte/SpendWise.gitt](https://github.com/Intelli2Byte)
     ```
     (Or just download the ZIP file and unzip it).
 
