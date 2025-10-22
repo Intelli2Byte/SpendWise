@@ -1,6 +1,6 @@
 # SpendWise: The Gamified Financial Literacy App [💸](https://spend-wise-ebon.vercel.app/)
 
-Welcome to **SpendWise**! This is a fun, interactive web dashboard designed to help students and teenagers learn financial literacy by turning it into a game.
+Welcome to **[SpendWise](https://spend-wise-ebon.vercel.app/)**! This is a fun, interactive web dashboard designed to help students and teenagers learn financial literacy by turning it into a game.
 
 Instead of a boring spreadsheet, SpendWise lets you track your spending, set budgets, and earn XP and achievement badges for making smart money decisions. It also features an AI-powered coach (WiseBot) to answer all your financial questions!
 This project was built from scratch using HTML, CSS, and vanilla JavaScript, with a few powerful libraries to make it awesome.
